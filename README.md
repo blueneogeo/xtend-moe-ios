@@ -12,6 +12,27 @@ You can also build the jar yourself. It is built on using Gradle:
 
 ## Creating and extending NSObject based classes
 
+The @Alloc @Init and @NSConstructor Active Annotations let you extend NSObject classes like this:
+
+```xtend
+
+@Alloc @Init
+class MyViewController extends UIViewController {
+
+	@Accessors String name
+
+	@NSController
+	def create(String name) {
+		this.name = name
+	}
+
+}
+
+```
+
+### Without the annotations
+
+
 To extend an NSObject in MOE, you have to implement the alloc() and init() methods, as well as add the constructor for the peer Pointer. For example:
 
 ```xtend
@@ -42,6 +63,8 @@ val myController = MyViewController.init.alloc => [ name = 'Hello world' ]
 
 ```
 
+### With the annotations
+
 Xtend MOE iOS provides you with Active Annotations that create this code for you and help you write nicer constructors:
 
 ```xtend
@@ -66,7 +89,8 @@ class MyViewController extends UIViewController {
 
 ```
 
-The @Alloc annotation creates the pointer constructor and the allow method. The @Init methid creates the init method.
+The @Alloc annotation creates the pointer constructor and the allow method. 
+The @Init methid creates the init method.
 
 The @NSController method lets you convert a normal method into a constructor. Any method annotated with @NSConstructor will be changed as follows:
 
