@@ -19,13 +19,6 @@ The @Alloc @Init and @NSConstructor Active Annotations let you extend NSObject c
 @Alloc @Init
 class MyViewController extends UIViewController {
 
-	@Accessors String name
-
-	@NSController
-	def create(String name) {
-		this.name = name
-	}
-
 }
 
 ```
@@ -33,7 +26,7 @@ class MyViewController extends UIViewController {
 And to use this view controller: 
 
 ```xtend
-val myController = MyViewController.create('Hello world')
+val myController = MyViewController.alloc.init
 ```
 
 ## @Alloc
