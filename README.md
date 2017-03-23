@@ -12,7 +12,7 @@ You can also build the jar yourself:
 
 ## Creating and extending NSObject based classes
 
-The @Alloc @Init and @NSConstructor Active Annotations let you extend NSObject classes like this:
+The *@Alloc* and *@Init* Active Annotations let you extend NSObject classes like this:
 
 ```xtend
 
@@ -31,7 +31,7 @@ val myController = MyViewController.alloc.init
 
 ## @Alloc
 
-To initialize any NSObject, you need to define a static alloc() method, as well as a protected new(Pointer) method. @Alloc does this for you. The @Alloc Active Annotation adds the following code to your class:
+To initialize any NSObject, you need to define a static *alloc()* method, as well as a *protected new(Pointer)* method. *@Alloc* does this for you. The *@Alloc* Active Annotation adds the following code to your class:
 
 ```xtend
 protected new(Pointer peer) {
@@ -44,7 +44,7 @@ def static native MyController alloc()
 
 ## @Init
 
-To initialize an NSObject, first call alloc() and then one of the init() methods in Objective C. This means you need to create this init() method as well. @Init does this for you, adding this code:
+To initialize an *NSObject*, first call *alloc()* and then one of the *init()* methods in Objective C. This means you need to create this *init()* method as well. *@Init* does this for you, adding this code:
 
 ```xtend
 @Selector("init")
@@ -77,10 +77,7 @@ class MyViewController extends UIViewController {
 
 ```
 
-The @Alloc annotation creates the pointer constructor and the allow method. 
-The @Init methid creates the init method.
-
-The @NSController method lets you convert a normal method into a constructor. Any method annotated with @NSConstructor will be changed as follows:
+The *@NSController* annotation lets you convert a normal method into a constructor. Any method annotated with *@NSConstructor* will be changed as follows:
 
 - it is made static
 - it will return an instance of the class
