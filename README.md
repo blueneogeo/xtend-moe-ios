@@ -51,7 +51,7 @@ To initialize an NSObject, first call alloc() and then one of the init() methods
 def native MyController init()
 ```
 
-## @NSConstructo
+## @NSConstructor
 
 Xtend MOE iOS provides you with Active Annotations that create this code for you and help you write nicer constructors:
 
