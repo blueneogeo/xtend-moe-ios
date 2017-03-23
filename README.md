@@ -1,6 +1,6 @@
 # Xtend MOE iOS
 
-Some handy tools for using Xtend with the Multi-OS-Engine
+Some handy tools for using Xtend with the [Multi-OS-Engine](https://multi-os-engine.org).
 
 ## Getting Started
 
