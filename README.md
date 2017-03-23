@@ -30,40 +30,35 @@ class MyViewController extends UIViewController {
 
 ```
 
-### Without the annotations
-
-
-To extend an NSObject in MOE, you have to implement the alloc() and init() methods, as well as add the constructor for the peer Pointer. For example:
+And to use this view controller: 
 
 ```xtend
+val myController = MyViewController.create('Hello world')
+```
 
-class MyViewController extends UIViewController {
+## @Alloc
 
-	@Accessors String name
+To initialize any NSObject, you need to define a static alloc() method, as well as a protected new(Pointer) method. @Alloc does this for you. The @Alloc Active Annotation adds the following code to your class:
 
-	protected new(Pointer peer) {
-		super(peer)
-    	}
-
-	@Selector("alloc")
-	def static native MyController alloc()
-	
-	@Selector("init")
-	def native MyController init()
-
+```xtend
+protected new(Pointer peer) {
+	super(peer)
 }
 
+@Selector("alloc")
+def static native MyController alloc()
 ```
 
-Besides this, this code is not very Java-friendly to use, even if Xtend makes it a lot easier than Java:
+## @Init
+
+To initialize an NSObject, first call alloc() and then one of the init() methods in Objective C. This means you need to create this init() method as well. @Init does this for you, adding this code:
 
 ```xtend
-
-val myController = MyViewController.init.alloc => [ name = 'Hello world' ]
-
+@Selector("init")
+def native MyController init()
 ```
 
-### With the annotations
+## @NSConstructo
 
 Xtend MOE iOS provides you with Active Annotations that create this code for you and help you write nicer constructors:
 
