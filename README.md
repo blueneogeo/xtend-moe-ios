@@ -6,7 +6,7 @@ Some handy tools for using Xtend with the [Multi-OS-Engine](https://multi-os-eng
 
 This project is not on Maven yet. A [copy of the built jar](https://github.com/blueneogeo/xtend-moe-ios/blob/master/xtend-moe-ios-1.0.jar) is in the root.
 
-You can also build the jar yourself. It is built on using Gradle:
+You can also build the jar yourself:
 
 * gradle build - creates the jar in ./build/libs
 
