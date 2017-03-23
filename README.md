@@ -72,7 +72,7 @@ class MyViewController extends UIViewController {
 
 	@Accessors String name
 
-	@NSController
+	@NSConstructor
 	def create(String name) {
 		this.name = name
 	}
@@ -81,7 +81,7 @@ class MyViewController extends UIViewController {
 
 ```
 
-The **@NSController** annotation lets you convert a normal method into a constructor. Any method annotated with **@NSConstructor** will be changed as follows:
+The **@NSConstructor** annotation lets you convert a normal method into a constructor. Any method annotated with **@NSConstructor** will be changed as follows:
 
 - it is made static
 - it will return an instance of the class
