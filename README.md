@@ -42,6 +42,8 @@ protected new(Pointer peer) {
 def static native MyController alloc()
 ```
 
+*[@Alloc source code](https://github.com/blueneogeo/xtend-moe-ios/blob/master/src/main/java/xtend/moe/ios/annotations/Alloc.xtend)*
+
 ## @Init
 
 To initialize an **NSObject**, first call **alloc()** and then one of the **init()** methods in Objective C. This means you need to create this **init()** method as well. **@Init** does this for you, adding this code:
@@ -50,6 +52,8 @@ To initialize an **NSObject**, first call **alloc()** and then one of the **init
 @Selector("init")
 def native MyController init()
 ```
+
+*[@Init source code](https://github.com/blueneogeo/xtend-moe-ios/blob/master/src/main/java/xtend/moe/ios/annotations/Init.xtend)*
 
 ## @NSConstructor
 
@@ -84,3 +88,5 @@ The **@NSController** annotation lets you convert a normal method into a constru
 - when statically called, it will call the init and alloc methods, and then execute your own constructor code
 
 These constructor methods can have any normal Java method name, and you can create multiple on a single class.
+
+*[@NSConstructor source code](https://github.com/blueneogeo/xtend-moe-ios/blob/master/src/main/java/xtend/moe/ios/annotations/NSConstructor.xtend)*
